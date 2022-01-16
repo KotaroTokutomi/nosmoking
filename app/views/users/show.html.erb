@@ -1,0 +1,41 @@
+<h1>マイページ</h1>
+
+
+<p>名前 : <%= @user.name %></p>
+<p>メールアドレス : <%= @user.email %></p>
+<p>プロフィール : <%= @user.profile %></p>
+<p>一日に吸っていたタバコの本数 : <%= @user.tabako %></p>
+<p>禁煙継続日数 : <%= @tweets_count %></p>
+<p>禁煙することによって伸びた寿命 <%= @zyumyo %>日 </p>
+<p>禁煙することによって浮いたお金 <%= @saving %>円 </p>
+<% if current_user.id == @user.id %>
+  <%= link_to "編集する", edit_user_registration_path %>
+<% end %>
+
+<h2>ユーザーの投稿一覧</h2>
+<% @user.tweets.each do |t| %>
+  <%= t.user.name %>
+  <%= t.body %>
+<% end %>
+
+<h2>ユーザーがいいねした投稿一覧</h2>
+<% @user.liked_tweets.each do |t| %>
+  <%= t.user.name %>
+  <%= t.body %>
+<% end %>
+
+<%= month_calendar events: @events do |date, events| %>
+  <%= date.day %>
+  <% events.each do |event| %>
+      <% if event.content == "禁煙day" %>
+          🚭
+      <% elsif event.content == "喫煙day" %>
+          🚬
+      <% end %>
+  <% end %>
+<% end %>
+
+<%= link_to "新規投稿", new_event_path %>
+<%= link_to "Tweet一覧に戻る", tweets_path %>
+<br>
+<br>

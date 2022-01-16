@@ -1,0 +1,14 @@
+<%= link_to 'イベント追加', new_event_path %> 
+
+<%= month_calendar events: @events do |date, events| %>
+    <%= date.day %>
+    <% events.each do |event| %>
+        <% if event.content == "禁煙day" %>
+            🚭
+        <% elsif event.content == "喫煙day" %>
+            🚬
+        <% end %>
+    <% end %>
+<% end %>
+
+

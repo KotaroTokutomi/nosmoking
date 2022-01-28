@@ -23,16 +23,57 @@
     font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
       Meiryo, "ＭＳ Ｐゴシック", sans-serif;
 
-      background-image: image-url("background.jpg");
-      background-size: cover;
+     
+      .bg_pattern {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #6d6a6a;
+        opacity: 0.4;
+        z-index: -1;
+      }
+      .Polka_v2 {
+        background-image:  radial-gradient(#0c0c0c 2px, transparent 2px), radial-gradient(#111110 2px, #464444 2px);
+        background-size: 40px 40px;
+        background-position: 0 0,20px 20px;
+      }
+      
+      /*=============
+      base
+      ==============*/
+      
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: YuGothic, "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+        letter-spacing: .025em;
+        line-height: 1.8;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .section {
+        max-width: 1024x;
+        margin: 0 auto;
+        
+      }
+     
+  
+      
+      
   }
   header {
-    background-color: #00acee;
-    height: 80px;
+    background-color:black;
+    height: 70px;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Permanent Marker', cursive;
   }
   header a {
     color: white; 

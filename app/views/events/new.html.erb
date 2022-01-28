@@ -1,24 +1,25 @@
-<h1>テスト</h1>
-
 <%= form_with(model: @event, local: true) do |form| %>
 
-  <div class="title">
-    <%= form.label :title %>
+  <div class="title１">
+    <%= form.label :新規投稿 %>
     <%= form.text_field :title %>
   </div>
 
-    <div class="time">
-    <%= form.label :start_time %>
+    <div class="time1">
+    <%= form.label :日時 %>
     <%= form.datetime_select :start_time %>
   </div>
 
   <div class="content">
-    <%= form.label :content %>
+    <%= form.label :禁煙or喫煙 %>
     <%= form.select :content, [["喫煙day", "喫煙day"], ["禁煙day", "禁煙day"]], include_blank: "選択して下さい" %>
   </div>
 
-  <div class="submit">
+  <div class="submit2">
     <%= form.submit %>
   </div>
+
+  <div class="bg_test">
+    </div>
 
 <% end %>

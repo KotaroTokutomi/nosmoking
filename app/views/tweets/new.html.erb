@@ -7,6 +7,17 @@
         <br>
         <%= f.text_field :body,size: 140%>
         <br>
+
+    <div class="time">
+    <%= f.label :start_time %>
+    <%= f.datetime_select :start_time %>
+    </div>
+
+    <div class="content">
+    <%= f.label :content %>
+    <%= f.select :content, [["喫煙day", "喫煙day"], ["禁煙day", "禁煙day"]], include_blank: "選択して下さい" %>
+    </div>
+
     <%= f.submit "送信"%>
     <br>
     <% end %>

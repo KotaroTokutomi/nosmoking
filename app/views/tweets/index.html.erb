@@ -1,7 +1,8 @@
 <%= stylesheet_link_tag 'index', :media => "all" %>
-<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
 <div class="tweets-container">
-<h3>投稿一覧</h3>
+
+<h2>投稿一覧</h2>
+
   <% @tweets.each do |t| %>
    
     <div class="tweet">
@@ -36,8 +37,9 @@
   <% end %>
 
   <% if user_signed_in? %>
-  <%= link_to "マイページへ", user_path(current_user.id) %>
+  <%= link_to "マイページへ", user_path(current_user.id), class: "btn btn-primary" %>
   <% end %>
+  <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
 
 　
 

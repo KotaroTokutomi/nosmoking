@@ -1,41 +1,41 @@
-<h1>マイページ</h1>
-
-
-<p>名前 : <%= @user.name %></p>
-<p>メールアドレス : <%= @user.email %></p>
-<p>プロフィール : <%= @user.profile %></p>
-<p>一日に吸っていたタバコの本数 : <%= @user.tabako %></p>
-<p>禁煙継続日数 : <%= @tweets_count %></p>
-<p>禁煙することによって伸びた寿命 <%= @zyumyo %>日 </p>
-<p>禁煙することによって浮いたお金 <%= @saving %>円 </p>
-<% if current_user.id == @user.id %>
-  <%= link_to "編集する", edit_user_registration_path %>
-<% end %>
-
-<h2>ユーザーの投稿一覧</h2>
-<% @user.tweets.each do |t| %>
-  <%= t.user.name %>
-  <%= t.body %>
-<% end %>
-
-<h2>ユーザーがいいねした投稿一覧</h2>
-<% @user.liked_tweets.each do |t| %>
-  <%= t.user.name %>
-  <%= t.body %>
-<% end %>
-
-<%= month_calendar events: @events do |date, events| %>
-  <%= date.day %>
-  <% events.each do |event| %>
-      <% if event.content == "禁煙day" %>
-          🚭
-      <% elsif event.content == "喫煙day" %>
-          🚬
+<h1 class="o">My Page</h1>
+<div class="kakoi">
+  <div class="card" style="width: 18rem;">
+    <%= image_tag"tabako.jpg" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= @user.name %></h5>
+      <p class="card-text"><%= @user.profile %></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">一日に吸っていたタバコの本数 <%= @user.tabako %></li>
+      <li class="list-group-item">禁煙継続日数 : <%= @tweets_count %></li>
+      <li class="list-group-item">禁煙することによって伸びた寿命 <%= @zyumyo %>日</li>
+      <li class="list-group-item">禁煙することによって浮いたお金 <%= @saving %>円</li>
+    </ul>
+  </div>
+  <div class="calendar">
+    <%= month_calendar events: @events do |date, events| %>
+      <%= date.day %>
+      <% events.each do |event| %>
+          <% if event.content == "禁煙day" %>
+              🚭
+          <% elsif event.content == "喫煙day" %>
+              🚬
+          <% end %>
       <% end %>
-  <% end %>
-<% end %>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to "新規投稿", new_event_path %>
-<%= link_to "Tweet一覧に戻る", tweets_path %>
+<div class="edit">
+<% if current_user.id == @user.id %>
+  <%= link_to "編集する", edit_user_registration_path, class:"btn btn-light" %>
+<% end %>
+</div>
+
+
+
+
+<%= link_to "Tweet一覧に戻る", tweets_path, class:"btn btn-light" %>
 <br>
 <br>

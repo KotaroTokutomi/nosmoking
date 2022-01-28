@@ -1,3 +1,57 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.title {
+    width: 50%;
+    margin: 10% auto;
+    min-width: 9rem;
+    position: absolute;
+    top: 1%; left: 25%;
+  }
+    
+  input, textarea {
+    float: left;
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    background: darken(#fdfdfd, 10%);
+    color: darken(#f9f9f9, 50%);
+    }
+  
+  
+   
+      
+      .time1 {
+        position: absolute;
+        display: inline-block;
+        top: 50%; left: 45%;
+        transform: translate(-50%, -50%);
+        
+      }
+.content{
+    position: absolute;
+    display: inline-block;
+    top: 63%; left: 45%;
+    transform: translate(-50%, -50%);
+
+}
+
+.submit2{
+    position: absolute;
+    display: inline-block;
+    top: 75%; left: 45%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+.bg_test {
+    background-image: url(toppage2.png);
+    min-height: max-content;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
